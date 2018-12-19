@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">BridgeCounter3</string>
+    <string name="ourteam">WE</string>
+    <string name = "theirteam">THEY</string>
 </resources>
