@@ -3,44 +3,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
     android:orientation="horizontal"
     android:gravity="top"
     android:background="@drawable/notebookbackground">
 
 
     <TextView
-        android:id = "@+id/we"
+        android:id="@+id/we"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="60sp"
+        android:paddingRight="60sp"
         android:text="@string/ourteam"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:visibility="visible"
-        android:paddingLeft="60sp"
-        android:paddingRight = "60sp"/>
+        android:visibility="visible" />
 
 
     <View
-        android:id = "@+id/divider"
-        android:layout_width="10dp"
+        android:id="@+id/vdivider"
+        android:layout_width="5dp"
         android:layout_height="match_parent"
-        android:background="@color/ruledLine"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="26dp"
         android:layout_toRightOf="@id/we"
-        android:padding="30sp"/>
+        android:background="@color/ruledLine"
+        android:padding="30sp" />
 
     <TextView
-        android:id = "@+id/them"
+        android:id="@+id/them"
         android:layout_width="148dp"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="-2dp"
+        android:layout_marginTop="2dp"
+        android:layout_toRightOf="@id/vdivider"
+        android:paddingLeft="50sp"
+        android:paddingRight="15sp"
         android:text="@string/theirteam"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:visibility="visible"
-        android:layout_toRightOf="@id/divider"
-        android:paddingLeft="50sp"
-        android:paddingRight="15sp"/>
+        android:visibility="visible" />
+
+    <View
+        android:id="@+id/hdivider1"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="261dp"
+        android:layout_marginBottom="244dp"
+        android:background="@color/ruledLine" />
 
 
 
