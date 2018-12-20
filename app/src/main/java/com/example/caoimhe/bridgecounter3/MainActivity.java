@@ -55,5 +55,6 @@ public class MainActivity extends AppCompatActivity {
         private String player2;
 
     }
+
 }
 

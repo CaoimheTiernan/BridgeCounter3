@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="16dp"
@@ -10,30 +11,38 @@
 
 
     <TextView
+        android:id = "@+id/we"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:paddingLeft="60sp"
-        android:paddingRight = "60sp"
         android:text="@string/ourteam"
         android:textSize="30sp"
         android:textStyle="bold"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:paddingLeft="60sp"
+        android:paddingRight = "60sp"/>
 
 
+    <View
+        android:id = "@+id/divider"
+        android:layout_width="10dp"
+        android:layout_height="match_parent"
+        android:background="@color/ruledLine"
+        android:layout_toRightOf="@id/we"
+        android:padding="30sp"/>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id = "@+id/them"
+        android:layout_width="148dp"
         android:layout_height="wrap_content"
+        android:text="@string/theirteam"
         android:textSize="30sp"
         android:textStyle="bold"
         android:visibility="visible"
-        android:text="@string/theirteam"
-        android:paddingLeft="60sp"
-        android:paddingStart="60sp"
-        android:paddingEnd="10sp"
-        android:paddingRight = "10sp"/>
+        android:layout_toRightOf="@id/divider"
+        android:paddingLeft="50sp"
+        android:paddingRight="15sp"/>
 
 
 
 
-</LinearLayout>
+</RelativeLayout>
