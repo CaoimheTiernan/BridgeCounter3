@@ -2,4 +2,6 @@
     <string name="app_name">BridgeCounter3</string>
     <string name="ourteam">WE</string>
     <string name = "theirteam">THEY</string>
+    <string name = "trickhint">Trick Score</string>
+    <string name= "premiumhint">Premium Score</string>
 </resources>

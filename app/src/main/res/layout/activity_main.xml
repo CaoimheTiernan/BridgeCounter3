@@ -63,15 +63,17 @@
         android:layout_height="55dp"
         android:layout_below="@id/we"
         android:layout_marginLeft="30dp"
+        android:layout_marginTop="13dp"
         android:layout_marginRight="50dp"
-        android:layout_marginTop="20dp"
-        android:hint="Tap here to enter score"
+        android:hint="@string/trickhint"
         android:inputType="number"
-        android:padding="10sp"
-        android:text="@string/trickhint"
-        android:textStyle="bold"
+        android:singleLine="false"
         android:textSize="19dp"
-        android:visibility="visible" />
+        android:textStyle="bold"
+        android:visibility="visible"
+        tools:padding="10sp"
+        android:gravity="center_horizontal"
+        android:background="@android:color/transparent"/>
 
     <EditText
         android:id="@+id/dscore1"
@@ -83,13 +85,15 @@
         android:layout_marginStart="-16dp"
         android:layout_marginLeft="16dp"
         android:layout_marginBottom="189dp"
-        android:hint="Tap here to enter score"
+        android:hint="@string/premiumhint"
         android:inputType="number"
         android:padding="10sp"
-        android:text="@string/premiumhint"
         android:textSize="19dp"
         android:textStyle="bold"
-        android:visibility="visible" />
+        android:visibility="visible"
+        android:gravity="center_horizontal"
+        android:background="@android:color/transparent"
+        />
 
 
 
