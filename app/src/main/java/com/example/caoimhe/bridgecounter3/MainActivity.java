@@ -2,6 +2,7 @@ package com.example.caoimhe.bridgecounter3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -16,8 +17,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public class Scoreboard
     {
-        private int upperScore; //the premium score. I don't play bridge this is to help me with the positioning
-        private int underScore; // the trick score.
+        private int upperScore; //the trick score. I don't play bridge this is to help me with the positioning
+        private int underScore; // the premium score.
 
 
         public Scoreboard() //scoreboard constructor. New round all scores set to 0
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
             upperScore = 0;
             underScore = 0;
         }
+
 
         public int getUpperScore() //returns upper score
         {
@@ -36,10 +38,22 @@ public class MainActivity extends AppCompatActivity {
             return underScore;
         }
 
+        public void setUnderScore(EditText value)
+        {
+            String tmp = value.getText().toString();
+            underScore += Integer.parseInt(tmp);
+        }
+
+        public void setUpperScore(EditText value)
+        {
+            String tmp = value.getText().toString();
+            upperScore += Integer.parseInt(tmp);
+        }
+
 
         public boolean GameWon(int upperScore) //checks if team's upperscore >= 100
         {   //TODO
-            if(this.upperScore >= 100)
+            if(this.underScore >= 100)
                 return true;
             else
                 return false;
@@ -53,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
     {
         private String player1;
         private String player2;
+
+        //getting information from the Edittext boxes
+        EditText wePremiumScore = (EditText) findViewById(R.id.dscore1);
 
     }
 
