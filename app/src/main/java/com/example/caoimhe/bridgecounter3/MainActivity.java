@@ -3,14 +3,26 @@ package com.example.caoimhe.bridgecounter3;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+
+
+public class MainActivity extends AppCompatActivity  {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Scoreboard ourTeam = new Scoreboard();
+        Scoreboard theirTeam = new Scoreboard();
+        EditText premiumScore1 = (EditText) findViewById(R.id.dscore1);
+        EditText trickScore1 = (EditText) findViewById(R.id.uscore1);
+        Button enterScore = (Button) findViewById(R.id.button);
+
     }
+
+    //When the user hits enter on the keyboard this method updates upperScore and underScore
 
     /* class that encapsulates the
     scoring
@@ -53,25 +65,15 @@ public class MainActivity extends AppCompatActivity {
 
         public boolean GameWon(int upperScore) //checks if team's upperscore >= 100
         {   //TODO
-            if(this.underScore >= 100)
-                return true;
-            else
-                return false;
+            return this.underScore >= 100;
         }
 
 
 
     }
 
-    public class Team extends Scoreboard
-    {
-        private String player1;
-        private String player2;
 
-        //getting information from the Edittext boxes
-        EditText wePremiumScore = (EditText) findViewById(R.id.dscore1);
-
-    }
+    
 
 }
 

@@ -3,5 +3,6 @@
     <string name="ourteam">WE</string>
     <string name = "theirteam">THEY</string>
     <string name = "trickhint">Trick Score</string>
-    <string name= "premiumhint">Premium Score</string>
+    <string name= "premiumhint">Premium Score </string>
+    <string name = "button">Enter points</string>
 </resources>
