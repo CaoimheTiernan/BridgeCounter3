@@ -2,6 +2,7 @@ package com.example.caoimhe.bridgecounter3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
 
@@ -14,11 +15,38 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Scoreboard ourTeam = new Scoreboard();
+        final Scoreboard ourTeam = new Scoreboard();
         Scoreboard theirTeam = new Scoreboard();
-        EditText premiumScore1 = (EditText) findViewById(R.id.dscore1);
-        EditText trickScore1 = (EditText) findViewById(R.id.uscore1);
+        final EditText premiumScore1 = (EditText) findViewById(R.id.dscore1);
+        final EditText trickScore1 = (EditText) findViewById(R.id.uscore1);
         Button enterScore = (Button) findViewById(R.id.button);
+
+        //when the button is tapped update upperScore and UnderScore
+        enterScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String tmp1 = premiumScore1.getText().toString();
+                String tmp2 = trickScore1.getText().toString();
+
+                //TODO fix app crashing when no value is entered but button is hit
+                if(tmp1 != "") {
+                    ourTeam.setUnderScore(tmp1);
+                }
+                else
+                    ourTeam.setUnderScore("0");
+                if(tmp2 != "") {
+                    ourTeam.setUpperScore(tmp2);
+                }
+                else
+                    ourTeam.setUpperScore("0");
+            }
+        });
+
+        //checks if a game has been won. Then should draw a new horizontal line
+        if(ourTeam.GameWon())
+        {
+
+        }
 
     }
 
@@ -50,20 +78,18 @@ public class MainActivity extends AppCompatActivity  {
             return underScore;
         }
 
-        public void setUnderScore(EditText value)
+        public void setUnderScore(String value)
         {
-            String tmp = value.getText().toString();
-            underScore += Integer.parseInt(tmp);
+            underScore += Integer.parseInt(value);
         }
 
-        public void setUpperScore(EditText value)
+        public void setUpperScore(String value)
         {
-            String tmp = value.getText().toString();
-            upperScore += Integer.parseInt(tmp);
+            upperScore += Integer.parseInt(value);
         }
 
 
-        public boolean GameWon(int upperScore) //checks if team's upperscore >= 100
+        public boolean GameWon() //checks if team's upperscore >= 100
         {   //TODO
             return this.underScore >= 100;
         }
