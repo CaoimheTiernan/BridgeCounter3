@@ -19,7 +19,13 @@ public class MainActivity extends AppCompatActivity  {
         Scoreboard theirTeam = new Scoreboard();
         final EditText premiumScore1 = (EditText) findViewById(R.id.dscore1);
         final EditText trickScore1 = (EditText) findViewById(R.id.uscore1);
+        final View newHorizontal = (View) findViewById(R.id.hdivider2);
         Button enterScore = (Button) findViewById(R.id.button);
+
+
+        //Making sure line doesn't appear until a game is won
+        newHorizontal.setVisibility(View.GONE);
+
 
         //when the button is tapped update upperScore and UnderScore
         enterScore.setOnClickListener(new View.OnClickListener() {
@@ -39,14 +45,17 @@ public class MainActivity extends AppCompatActivity  {
                 }
                 else
                     ourTeam.setUpperScore("0");
+
+                //checks if a game has been won. Then should draw a new horizontal line
+               if(ourTeam.GameWon())
+                    newHorizontal.setVisibility(View.VISIBLE);
+               else
+                   newHorizontal.setVisibility(View.GONE);
             }
         });
 
-        //checks if a game has been won. Then should draw a new horizontal line
-        if(ourTeam.GameWon())
-        {
 
-        }
+
 
     }
 
@@ -80,12 +89,12 @@ public class MainActivity extends AppCompatActivity  {
 
         public void setUnderScore(String value)
         {
-            underScore += Integer.parseInt(value);
+            underScore = Integer.parseInt(value);
         }
 
         public void setUpperScore(String value)
         {
-            upperScore += Integer.parseInt(value);
+            upperScore = Integer.parseInt(value);
         }
 
 
