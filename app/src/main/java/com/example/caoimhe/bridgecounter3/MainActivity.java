@@ -34,17 +34,17 @@ public class MainActivity extends AppCompatActivity  {
                 String tmp1 = premiumScore1.getText().toString();
                 String tmp2 = trickScore1.getText().toString();
 
-                //TODO fix app crashing when no value is entered but button is hit
-                if(tmp1 != "") {
-                    ourTeam.setUnderScore(tmp1);
-                }
-                else
+                //Check if a value was entered. If not set the value to 0
+                if(tmp1.equals("")) {
                     ourTeam.setUnderScore("0");
-                if(tmp2 != "") {
-                    ourTeam.setUpperScore(tmp2);
                 }
                 else
+                    ourTeam.setUnderScore(tmp1);
+                if(tmp2.equals("")) {
                     ourTeam.setUpperScore("0");
+                }
+                else
+                    ourTeam.setUpperScore(tmp2);
 
                 //checks if a game has been won. Then should draw a new horizontal line
                if(ourTeam.GameWon())
