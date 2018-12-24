@@ -17,10 +17,10 @@ public class MainActivity extends AppCompatActivity  {
         setContentView(R.layout.activity_main);
         final Scoreboard ourTeam = new Scoreboard();
         Scoreboard theirTeam = new Scoreboard();
-        final EditText premiumScore1 = (EditText) findViewById(R.id.dscore1);
-        final EditText trickScore1 = (EditText) findViewById(R.id.uscore1);
-        final View newHorizontal = (View) findViewById(R.id.hdivider2);
-        Button enterScore = (Button) findViewById(R.id.button);
+        final EditText premiumScore1 =  findViewById(R.id.dscore1);
+        final EditText trickScore1 =  findViewById(R.id.uscore1);
+        final View newHorizontal =  findViewById(R.id.hdivider2);
+        Button enterScore =  findViewById(R.id.button);
 
 
         //Making sure line doesn't appear until a game is won
@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity  {
         private int underScore; // the premium score.
 
 
-        public Scoreboard() //scoreboard constructor. New round all scores set to 0
+        Scoreboard() //scoreboard constructor. New round all scores set to 0
         {
             upperScore = 0;
             underScore = 0;
@@ -87,18 +87,18 @@ public class MainActivity extends AppCompatActivity  {
             return underScore;
         }
 
-        public void setUnderScore(String value)
+        void setUnderScore(String value)
         {
             underScore = Integer.parseInt(value);
         }
 
-        public void setUpperScore(String value)
+         void setUpperScore(String value)
         {
             upperScore = Integer.parseInt(value);
         }
 
 
-        public boolean GameWon() //checks if team's upperscore >= 100
+         boolean GameWon() //checks if team's upperscore >= 100
         {   //TODO
             return this.underScore >= 100;
         }
