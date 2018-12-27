@@ -2,6 +2,7 @@ package com.example.caoimhe.bridgecounter3;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Button;
@@ -20,6 +21,7 @@ public class MainActivity extends AppCompatActivity  {
         final EditText premiumScore1 =  findViewById(R.id.dscore1);
         final EditText trickScore1 =  findViewById(R.id.uscore1);
         final View newHorizontal =  findViewById(R.id.hdivider2);
+        final View trickScore2 = findViewById(R.id.uscore2);
         Button enterScore =  findViewById(R.id.button);
 
 
@@ -47,8 +49,16 @@ public class MainActivity extends AppCompatActivity  {
                     ourTeam.setUpperScore(tmp2);
 
                 //checks if a game has been won. Then should draw a new horizontal line
-               if(ourTeam.GameWon())
-                    newHorizontal.setVisibility(View.VISIBLE);
+               if(ourTeam.GameWon()) {
+                   newHorizontal.setVisibility(View.VISIBLE);
+                  //create new trickscore box
+                   trickScore2.setVisibility(View.VISIBLE);
+                   //disable editing of old trickscore
+                   trickScore1.setEnabled(false);
+                   trickScore1.setInputType(InputType.TYPE_NULL);
+                   trickScore1.setTextColor(getResources().getColor(R.color.textcolor);
+
+               }
                else
                    newHorizontal.setVisibility(View.GONE);
             }
@@ -99,8 +109,15 @@ public class MainActivity extends AppCompatActivity  {
 
 
          boolean GameWon() //checks if team's upperscore >= 100
-        {   //TODO
+        {
             return this.underScore >= 100;
+        }
+
+
+        //Todo add code from onclick here and generalise it.
+        void updateSooreboard()
+        {
+
         }
 
 
