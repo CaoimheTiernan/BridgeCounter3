@@ -51,9 +51,21 @@ public class MainActivity extends AppCompatActivity  {
 
                 //checks if a game has been won. Then should draw a new horizontal line
                if(ourTeam.GameWon()) {
-                   updateTrickScores(newHorizontal,trickScore2,trickScore1);
-                   updatePremiumScore(premiumScore2,premiumScore1);
-                   ourTeam.gamesWon++;
+
+                   switch (ourTeam.gamesWon)
+                   {
+                       case 0 :
+                           updateTrickScores(newHorizontal,trickScore2,trickScore1);
+                           updatePremiumScore(premiumScore2,premiumScore1);
+                           ourTeam.gamesWon++;
+                           break;
+                       case 1 :
+                           break;
+
+                   }
+
+
+
                }
                else
                    newHorizontal.setVisibility(View.GONE);
