@@ -21,6 +21,8 @@ public class MainActivity extends AppCompatActivity  {
         final EditText trickScore1 =  findViewById(R.id.uscore1);
         final View newHorizontal =  findViewById(R.id.hdivider2);
         final EditText trickScore2 = findViewById(R.id.uscore2);
+        final EditText premiumScore2 = findViewById(R.id.dscore2);
+
         Button enterScore =  findViewById(R.id.button);
 
 
@@ -49,15 +51,9 @@ public class MainActivity extends AppCompatActivity  {
 
                 //checks if a game has been won. Then should draw a new horizontal line
                if(ourTeam.GameWon()) {
-                   /*newHorizontal.setVisibility(View.VISIBLE);
-                  //create new trickscore box
-                   trickScore2.setVisibility(View.VISIBLE);
-                   //disable editing of old trickscore
-                   trickScore1.setEnabled(false);
-                   trickScore1.setInputType(InputType.TYPE_NULL);
-                   trickScore1.setTextColor(getResources().getColor(R.color.textcolor));
-                   */
-                   updateScoreboard(newHorizontal,trickScore2,trickScore1);
+                   updateTrickScores(newHorizontal,trickScore2,trickScore1);
+                   updatePremiumScore(premiumScore2,premiumScore1);
+                   ourTeam.gamesWon++;
                }
                else
                    newHorizontal.setVisibility(View.GONE);
@@ -78,6 +74,7 @@ public class MainActivity extends AppCompatActivity  {
     {
         private int upperScore; //the trick score. I don't play bridge this is to help me with the positioning
         private int underScore; // the premium score.
+        private int gamesWon; //keeps count of the number of games won by team
 
 
         Scoreboard() //scoreboard constructor. New round all scores set to 0
@@ -122,16 +119,26 @@ public class MainActivity extends AppCompatActivity  {
 
 
     //updates activity
-    void updateScoreboard(View horizontal,EditText newBox, EditText oldBox)
+    void updateTrickScores(View horizontal,EditText newBox, EditText oldBox)
     {
         horizontal.setVisibility(View.VISIBLE);
-        //create new trickscore box
+        //make next trickscore box visible
         newBox.setVisibility(View.VISIBLE);
         //disable editing of old trickscore
         oldBox.setEnabled(false);
         oldBox.setInputType(InputType.TYPE_NULL);
         oldBox.setTextColor(getResources().getColor(R.color.textcolor));
 
+    }
+
+    void updatePremiumScore(EditText newBox, EditText oldBox)
+    {
+        //make next premium score box visable
+        newBox.setVisibility(View.VISIBLE);
+        //disable editing of old premium Score box
+        oldBox.setEnabled(false);
+        oldBox.setInputType(InputType.TYPE_NULL);
+        oldBox.setTextColor(getResources().getColor(R.color.textcolor));
     }
 
 
