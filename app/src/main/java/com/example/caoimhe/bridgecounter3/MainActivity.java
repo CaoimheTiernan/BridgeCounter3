@@ -11,7 +11,6 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity  {
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,7 +20,7 @@ public class MainActivity extends AppCompatActivity  {
         final EditText premiumScore1 =  findViewById(R.id.dscore1);
         final EditText trickScore1 =  findViewById(R.id.uscore1);
         final View newHorizontal =  findViewById(R.id.hdivider2);
-        final View trickScore2 = findViewById(R.id.uscore2);
+        final EditText trickScore2 = findViewById(R.id.uscore2);
         Button enterScore =  findViewById(R.id.button);
 
 
@@ -50,14 +49,15 @@ public class MainActivity extends AppCompatActivity  {
 
                 //checks if a game has been won. Then should draw a new horizontal line
                if(ourTeam.GameWon()) {
-                   newHorizontal.setVisibility(View.VISIBLE);
+                   /*newHorizontal.setVisibility(View.VISIBLE);
                   //create new trickscore box
                    trickScore2.setVisibility(View.VISIBLE);
                    //disable editing of old trickscore
                    trickScore1.setEnabled(false);
                    trickScore1.setInputType(InputType.TYPE_NULL);
-                   trickScore1.setTextColor(getResources().getColor(R.color.textcolor);
-
+                   trickScore1.setTextColor(getResources().getColor(R.color.textcolor));
+                   */
+                   updateScoreboard(newHorizontal,trickScore2,trickScore1);
                }
                else
                    newHorizontal.setVisibility(View.GONE);
@@ -114,13 +114,23 @@ public class MainActivity extends AppCompatActivity  {
         }
 
 
-        //Todo add code from onclick here and generalise it.
-        void updateSooreboard()
-        {
-
-        }
 
 
+
+
+    }
+
+
+    //updates activity
+    void updateScoreboard(View horizontal,EditText newBox, EditText oldBox)
+    {
+        horizontal.setVisibility(View.VISIBLE);
+        //create new trickscore box
+        newBox.setVisibility(View.VISIBLE);
+        //disable editing of old trickscore
+        oldBox.setEnabled(false);
+        oldBox.setInputType(InputType.TYPE_NULL);
+        oldBox.setTextColor(getResources().getColor(R.color.textcolor));
 
     }
 
