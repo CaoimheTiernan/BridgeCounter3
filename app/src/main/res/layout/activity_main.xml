@@ -121,7 +121,8 @@
         android:layout_marginLeft="0dp"
         android:layout_marginTop="314dp"
         android:layout_marginBottom="191dp"
-        android:background="@color/ruledLine" />
+        android:background="@color/ruledLine"
+        android:visibility="gone"/>
 
 
     --> we team 2nd trickscore box
@@ -143,6 +144,7 @@
         tools:padding="10sp" />
 
    --> we team 2nd premium box
+
     <EditText
         android:id="@+id/dscore2"
         android:layout_width="150dp"
@@ -150,7 +152,9 @@
         android:layout_alignStart="@+id/dscore1"
         android:layout_alignLeft="@id/dscore1"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="127dp"
+        android:layout_marginStart="-1dp"
+        android:layout_marginLeft="-1dp"
+        android:layout_marginBottom="135dp"
         android:background="@android:color/transparent"
         android:gravity="center_horizontal"
         android:hint="@string/premiumhint"
@@ -159,6 +163,20 @@
         android:textSize="19dp"
         android:textStyle="bold"
         android:visibility="gone" />
+
+  --> 3rd horizontal divider
+    <View
+        android:id="@+id/hdivider3"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:layout_below="@+id/hdivider2"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="-147dp"
+        android:background="@color/ruledLine"
+        android:visibility="gone"/>
 
 
 
