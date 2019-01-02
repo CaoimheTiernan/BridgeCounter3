@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity  {
         final View newHorizontal =  findViewById(R.id.hdivider2);
         final EditText trickScore2 = findViewById(R.id.uscore2);
         final EditText premiumScore2 = findViewById(R.id.dscore2);
+        final View newHorizontal2 = findViewById(R.id.hdivider3);
 
         Button enterScore =  findViewById(R.id.button);
 
@@ -60,6 +61,8 @@ public class MainActivity extends AppCompatActivity  {
                            ourTeam.gamesWon++;
                            break;
                        case 1 :
+                           updateTrickScores(newHorizontal2,trickScore2,trickScore2);
+                           updatePremiumScore(premiumScore2,premiumScore2);
                            break;
 
                    }
