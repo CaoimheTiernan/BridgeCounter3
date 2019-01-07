@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity  {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         final Scoreboard ourTeam = new Scoreboard();
-        Scoreboard theirTeam = new Scoreboard();
+        final Scoreboard theirTeam = new Scoreboard();
         final EditText premiumScore1 =  findViewById(R.id.dscore1);
         final EditText trickScore1 =  findViewById(R.id.uscore1);
         final View newHorizontal =  findViewById(R.id.hdivider2);
@@ -61,36 +61,16 @@ public class MainActivity extends AppCompatActivity  {
                      //todo provide cases for 3rd and second game
                     }
 
-                    //todo if their team wins
 
                 }
 
+                //todo if their team wins
 
+                if(theirTeam.GameWon())
+                {
 
+                }
 
-
-
-              /*  //checks if a game has been won. Then should draw a new horizontal line
-               if(ourTeam.GameWon()) {
-
-                   switch (ourTeam.gamesWon)
-                   {
-                       case 0 :
-                           updateTrickScores(newHorizontal,trickScore2,trickScore1);
-                           updatePremiumScore(premiumScore2,premiumScore1);
-                           break;
-                       case 1 :
-                           updateTrickScores(newHorizontal2,trickScore2,trickScore2);
-                           updatePremiumScore(premiumScore2,premiumScore2);
-                           break;
-
-                   }
-
-
-
-               }
-               else
-                   newHorizontal.setVisibility(View.GONE); */
             }
         });
 

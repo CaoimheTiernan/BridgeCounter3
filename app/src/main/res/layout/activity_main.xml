@@ -7,7 +7,7 @@
     android:gravity="top"
     android:background="@drawable/notebookbackground">
 
-    --> heading for the team entering the score
+    <!-- heading for the team entering the score -->
     <TextView
         android:id="@+id/we"
         android:layout_width="wrap_content"
@@ -19,7 +19,7 @@
         android:textStyle="bold"
         android:visibility="visible" />
 
-    --> vertical line down center
+    <!-- vertical line down center-->
     <View
         android:id="@+id/vdivider"
         android:layout_width="5dp"
@@ -30,7 +30,7 @@
         android:background="@color/ruledLine"
         android:padding="30sp" />
 
-    --> heading for opposite team
+    <!-- heading for opposite team-->
     <TextView
         android:id="@+id/them"
         android:layout_width="148dp"
@@ -46,7 +46,7 @@
         android:textStyle="bold"
         android:visibility="visible" />
 
-    --> first center horiontal line
+    <!--first center horiontal line -->
     <View
         android:id="@+id/hdivider1"
         android:layout_width="match_parent"
@@ -59,26 +59,26 @@
         android:layout_marginBottom="244dp"
         android:background="@color/ruledLine" />
 
-   -- 1st trick score box for we team
-    <EditText
-        android:id="@+id/uscore1"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
-        android:layout_below="@id/we"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="-2dp"
-        android:layout_marginRight="50dp"
-        android:background="@android:color/transparent"
-        android:gravity="center_horizontal"
-        android:hint="@string/trickhint"
-        android:inputType="number"
-        android:singleLine="false"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        android:visibility="visible"
-        tools:padding="10sp" />
+    <!-- 1st trick score box for we team -->
+       <EditText
+           android:id="@+id/uscore1"
+           android:layout_width="120dp"
+           android:layout_height="55dp"
+           android:layout_below="@id/we"
+           android:layout_marginLeft="30dp"
+           android:layout_marginTop="-2dp"
+           android:layout_marginRight="50dp"
+           android:background="@android:color/transparent"
+           android:gravity="center_horizontal"
+           android:hint="@string/trickhint"
+           android:inputType="number"
+           android:singleLine="false"
+           android:textSize="19dp"
+           android:textStyle="bold"
+           android:visibility="visible"
+           tools:padding="10sp" />
 
-   --> 1st premium score box for we team
+    <!--1st premium score box for we team -->
     <EditText
         android:id="@+id/dscore1"
         android:layout_width="150dp"
@@ -99,7 +99,7 @@
         android:background="@android:color/transparent"
         />
 
-    --> button to update activity and scoreboard
+    <!--button to update activity and scoreboard-->
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
@@ -110,7 +110,7 @@
         android:padding="15dp"
         android:text="@string/button" />
 
-    --> 2nd horiontal divider for when a game is won
+    <!--2nd horiontal divider for when a game is won -->
     <View
         android:id="@+id/hdivider2"
         android:layout_width="match_parent"
@@ -125,7 +125,7 @@
         android:visibility="gone"/>
 
 
-    --> we team 2nd trickscore box
+    <!-- we team 2nd trickscore box -->
     <EditText
         android:id="@+id/uscore2"
         android:layout_width="120dp"
@@ -143,7 +143,7 @@
         android:visibility="gone"
         tools:padding="10sp" />
 
-   --> we team 2nd premium box
+    <!--we team 2nd premium box -->
 
     <EditText
         android:id="@+id/dscore2"
@@ -164,7 +164,7 @@
         android:textStyle="bold"
         android:visibility="gone" />
 
-  --> 3rd horizontal divider
+    <!-- 3rd horizontal divider-->
     <View
         android:id="@+id/hdivider3"
         android:layout_width="match_parent"
@@ -178,8 +178,7 @@
         android:background="@color/ruledLine"
         android:visibility="gone"/>
 
-  --> their team trick box
-
+    <!--their team trick box -->
     <EditText
         android:id="@+id/uscore3"
         android:layout_width="120dp"
@@ -200,7 +199,7 @@
         android:visibility="visible"
         tools:padding="10sp" />
 
-    --> their team 1st premium box
+    <!-- their team 1st premium box-->
 
     <EditText
         android:id="@+id/dscore3"
@@ -222,7 +221,7 @@
         android:textStyle="bold"
         android:visibility="visible" />
 
-    --> their team 2nd trick box
+    <!--their team 2nd trick box -->
 
     <EditText
         android:id="@+id/uscore4"
@@ -244,7 +243,7 @@
         android:visibility="gone"
         tools:padding="10sp" />
 
-    --> their team 2nd premium score
+    <!-- their team 2nd premium score-->
 
     <EditText
         android:id="@+id/dscore4"
