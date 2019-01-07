@@ -35,22 +35,42 @@ public class MainActivity extends AppCompatActivity  {
         enterScore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String tmp1 = premiumScore1.getText().toString();
-                String tmp2 = trickScore1.getText().toString();
 
                 //Check if a value was entered. If not set the value to 0
-                if(tmp1.equals("")) {
-                    ourTeam.setUnderScore("0");
-                }
-                else
-                    ourTeam.setUnderScore(tmp1);
-                if(tmp2.equals("")) {
-                    ourTeam.setUpperScore("0");
-                }
-                else
-                    ourTeam.setUpperScore(tmp2);
+                ourTeam.setUnderScore(checkScore(premiumScore1));
+                ourTeam.setUpperScore(checkScore(trickScore1));
 
-                //checks if a game has been won. Then should draw a new horizontal line
+                if(ourTeam.GameWon())
+                {
+                    switch (gameNum)
+                    {
+                        case 1:
+                            updateTrickScores(newHorizontal,trickScore2,trickScore1);
+                            updatePremiumScore(premiumScore2,premiumScore1);
+
+                            ourTeam.setUnderScore(checkScore(premiumScore2));
+                            ourTeam.setUpperScore(checkScore(trickScore2));
+                            break;
+
+                     //todo fix bug that if 2nd p score < 100 it says game has been won
+                        case 2 :
+                            updateTrickScores(newHorizontal2,trickScore2,trickScore2);
+                            updatePremiumScore(premiumScore2,premiumScore2);
+                            break;
+
+                     //todo provide cases for 3rd and second game
+                    }
+
+                    //todo if their team wins
+
+                }
+
+
+
+
+
+
+              /*  //checks if a game has been won. Then should draw a new horizontal line
                if(ourTeam.GameWon()) {
 
                    switch (ourTeam.gamesWon)
@@ -58,7 +78,6 @@ public class MainActivity extends AppCompatActivity  {
                        case 0 :
                            updateTrickScores(newHorizontal,trickScore2,trickScore1);
                            updatePremiumScore(premiumScore2,premiumScore1);
-                           ourTeam.gamesWon++;
                            break;
                        case 1 :
                            updateTrickScores(newHorizontal2,trickScore2,trickScore2);
@@ -71,7 +90,7 @@ public class MainActivity extends AppCompatActivity  {
 
                }
                else
-                   newHorizontal.setVisibility(View.GONE);
+                   newHorizontal.setVisibility(View.GONE); */
             }
         });
 
@@ -87,42 +106,51 @@ public class MainActivity extends AppCompatActivity  {
      */
     public class Scoreboard
     {
-        private int upperScore; //the trick score. I don't play bridge this is to help me with the positioning
-        private int underScore; // the premium score.
+        private int[] upperScore = new int [4] ; //the trick score. I don't play bridge this is to help me with the positioning
+        private int[] underScore = new int [4]; // the premium score.
         private int gamesWon; //keeps count of the number of games won by team
+
 
 
         Scoreboard() //scoreboard constructor. New round all scores set to 0
         {
-            upperScore = 0;
-            underScore = 0;
+            gamesWon = 0;
         }
 
 
         public int getUpperScore() //returns upper score
         {
-            return upperScore;
+            return upperScore[gameNum];
         }
 
         public int getUnderScore() //returns underscore
         {
-            return underScore;
+            return underScore[gameNum];
         }
 
         void setUnderScore(String value)
         {
-            underScore = Integer.parseInt(value);
+            underScore[gameNum] = Integer.parseInt(value);
         }
 
          void setUpperScore(String value)
         {
-            upperScore = Integer.parseInt(value);
+            upperScore[gameNum] = Integer.parseInt(value);
         }
 
 
-         boolean GameWon() //checks if team's upperscore >= 100
+         boolean GameWon() //checks if team's underscore >= 100
         {
-            return this.underScore >= 100;
+            if(this.underScore[gameNum] >= 100)
+            {
+                gamesWon++;
+                gameNum++;
+                return true;
+
+            }
+           else
+               return false;
+
         }
 
 
@@ -131,6 +159,8 @@ public class MainActivity extends AppCompatActivity  {
 
 
     }
+
+    private static int gameNum = 0; //keeps count of the number of games in tot
 
 
     //updates activity
@@ -154,6 +184,20 @@ public class MainActivity extends AppCompatActivity  {
         oldBox.setEnabled(false);
         oldBox.setInputType(InputType.TYPE_NULL);
         oldBox.setTextColor(getResources().getColor(R.color.textcolor));
+    }
+
+    String checkScore(EditText score)
+    {
+        String tmp = score.getText().toString();
+
+
+        //Check if a value was entered. If not set the value to 0
+        if(tmp.equals("")) {
+            return "0";
+        }
+        else
+            return tmp;
+
     }
 
 
