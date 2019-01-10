@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity  {
         final EditText trickScore2 = findViewById(R.id.uscore2);
         final EditText premiumScore2 = findViewById(R.id.dscore2);
         final View newHorizontal2 = findViewById(R.id.hdivider3);
+        final EditText trickScore3 = findViewById(R.id.uscore3);
+        final EditText trickScore4 = findViewById(R.id.uscore4);
+        final EditText premiumScore3 = findViewById(R.id.dscore3);
+        final EditText premiumScore4 = findViewById(R.id.dscore4);
 
         Button enterScore =  findViewById(R.id.button);
 
@@ -42,8 +46,11 @@ public class MainActivity extends AppCompatActivity  {
 
                 if(ourTeam.GameWon())
                 {
-                    switch (gameNum)
+                    switch (ourTeam.getGamesWon())
                     {
+                        case 0 :
+                            break;
+
                         case 1:
                             updateTrickScores(newHorizontal,trickScore2,trickScore1);
                             updatePremiumScore(premiumScore2,premiumScore1);
@@ -58,7 +65,6 @@ public class MainActivity extends AppCompatActivity  {
                             updatePremiumScore(premiumScore2,premiumScore2);
                             break;
 
-                     //todo provide cases for 3rd and second game
                     }
 
 
@@ -68,8 +74,26 @@ public class MainActivity extends AppCompatActivity  {
 
                 if(theirTeam.GameWon())
                 {
+                    switch(theirTeam.getGamesWon())
+                    {
+                        case 0 : break;
+                        case 1 :
+                            updateTrickScores(newHorizontal,trickScore4,trickScore3);
+                            updatePremiumScore(premiumScore4,premiumScore3);
 
+                            theirTeam.setUnderScore(checkScore(premiumScore3));
+                            theirTeam.setUpperScore(checkScore(trickScore3));
+                            break;
+
+                        case 2 :
+                            updateTrickScores(newHorizontal2,trickScore4,trickScore4);
+                            updatePremiumScore(premiumScore4,premiumScore4);
+                            break;
+
+                    }
                 }
+
+
 
             }
         });
@@ -106,6 +130,11 @@ public class MainActivity extends AppCompatActivity  {
         public int getUnderScore() //returns underscore
         {
             return underScore[gameNum];
+        }
+
+        public int getGamesWon()
+        {
+            return gamesWon;
         }
 
         void setUnderScore(String value)
