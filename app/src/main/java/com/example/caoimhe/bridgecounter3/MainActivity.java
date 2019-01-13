@@ -60,20 +60,18 @@ public class MainActivity extends AppCompatActivity  {
                 {
                     switch (ourTeam.getGamesWon())
                     {
-                        case 0 :
-                            break;
 
                         case 1:
-                            updateTrickScores(newHorizontal,trickScore2,trickScore1);
+                            updateTrickScores(trickScore2,trickScore1);
                             updatePremiumScore(premiumScore2,premiumScore1);
-
-
+                            updateHorizontal(newHorizontal);
                             break;
 
                      //todo fix bug that if 2nd p score < 100 it says game has been won
                         case 2 :
-                            updateTrickScores(newHorizontal2,trickScore2,trickScore2);
+                            updateTrickScores(trickScore2,trickScore2);
                             updatePremiumScore(premiumScore2,premiumScore2);
+                            updateHorizontal(newHorizontal2);
                             break;
 
                     }
@@ -86,17 +84,16 @@ public class MainActivity extends AppCompatActivity  {
                 {
                     switch(theirTeam.getGamesWon())
                     {
-                        case 0 : break;
                         case 1 :
-                            updateTrickScores(newHorizontal,trickScore4,trickScore3);
+                            updateTrickScores(trickScore4,trickScore3);
                             updatePremiumScore(premiumScore4,premiumScore3);
-
-
+                            updateHorizontal(newHorizontal);
                             break;
 
                         case 2 :
-                            updateTrickScores(newHorizontal2,trickScore4,trickScore4);
+                            updateTrickScores(trickScore4,trickScore4);
                             updatePremiumScore(premiumScore4,premiumScore4);
+                            updateHorizontal(newHorizontal2);
                             break;
 
                     }
@@ -182,9 +179,9 @@ public class MainActivity extends AppCompatActivity  {
 
 
     //updates activity
-    void updateTrickScores(View horizontal,EditText newBox, EditText oldBox)
+    void updateTrickScores(EditText newBox, EditText oldBox)
     {
-        horizontal.setVisibility(View.VISIBLE);
+
         //make next trickscore box visible
         newBox.setVisibility(View.VISIBLE);
         //disable editing of old trickscore
@@ -202,6 +199,12 @@ public class MainActivity extends AppCompatActivity  {
         oldBox.setEnabled(false);
         oldBox.setInputType(InputType.TYPE_NULL);
         oldBox.setTextColor(getResources().getColor(R.color.textcolor));
+    }
+
+    //updates the activity to the new horizontal line
+    void updateHorizontal(View horizontal)
+    {
+        horizontal.setVisibility(View.VISIBLE);
     }
 
     String checkScore(EditText score)
