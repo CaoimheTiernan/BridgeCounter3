@@ -40,10 +40,22 @@ public class MainActivity extends AppCompatActivity  {
             @Override
             public void onClick(View v) {
 
-                //Check if a value was entered. If not set the value to 0
-                ourTeam.setUnderScore(checkScore(premiumScore1));
-                ourTeam.setUpperScore(checkScore(trickScore1));
+                if(gameNum == 0) {
+                    //Check if a value was entered. If not set the value to 0
+                    ourTeam.setUnderScore(checkScore(premiumScore1));
+                    ourTeam.setUpperScore(checkScore(trickScore1));
+                    theirTeam.setUnderScore(checkScore(premiumScore3));
+                    theirTeam.setUpperScore(checkScore(trickScore3));
 
+                }
+
+                if(gameNum == 1)
+                {
+                    ourTeam.setUnderScore(checkScore(premiumScore2));
+                    ourTeam.setUpperScore(checkScore(trickScore2));
+                    theirTeam.setUnderScore(checkScore(premiumScore4));
+                    theirTeam.setUpperScore(checkScore(trickScore4));
+                }
                 if(ourTeam.GameWon())
                 {
                     switch (ourTeam.getGamesWon())
@@ -55,8 +67,7 @@ public class MainActivity extends AppCompatActivity  {
                             updateTrickScores(newHorizontal,trickScore2,trickScore1);
                             updatePremiumScore(premiumScore2,premiumScore1);
 
-                            ourTeam.setUnderScore(checkScore(premiumScore2));
-                            ourTeam.setUpperScore(checkScore(trickScore2));
+
                             break;
 
                      //todo fix bug that if 2nd p score < 100 it says game has been won
@@ -70,7 +81,6 @@ public class MainActivity extends AppCompatActivity  {
 
                 }
 
-                //todo if their team wins
 
                 if(theirTeam.GameWon())
                 {
@@ -81,8 +91,7 @@ public class MainActivity extends AppCompatActivity  {
                             updateTrickScores(newHorizontal,trickScore4,trickScore3);
                             updatePremiumScore(premiumScore4,premiumScore3);
 
-                            theirTeam.setUnderScore(checkScore(premiumScore3));
-                            theirTeam.setUpperScore(checkScore(trickScore3));
+
                             break;
 
                         case 2 :
