@@ -56,31 +56,35 @@ public class MainActivity extends AppCompatActivity  {
                     theirTeam.setUnderScore(checkScore(premiumScore4));
                     theirTeam.setUpperScore(checkScore(trickScore4));
                 }
-                if(ourTeam.GameWon())
-                {
-                    switch (ourTeam.getGamesWon())
-                    {
+
+
+                if(theirTeam.GameWon() || ourTeam.GameWon()) {
+                    switch (gameNum) {
 
                         case 1:
-                            updateTrickScores(trickScore2,trickScore1);
-                            updatePremiumScore(premiumScore2,premiumScore1);
+                            updateTrickScores(trickScore2, trickScore1);
+                            updatePremiumScore(premiumScore2, premiumScore1);
+                            updateTrickScores(trickScore4, trickScore3);
+                            updatePremiumScore(premiumScore4, premiumScore3);
                             updateHorizontal(newHorizontal);
                             break;
 
-                     //todo fix bug that if 2nd p score < 100 it says game has been won
-                        case 2 :
-                            updateTrickScores(trickScore2,trickScore2);
-                            updatePremiumScore(premiumScore2,premiumScore2);
+
+                        case 2:
+                            updateTrickScores(trickScore2, trickScore2);
+                            updatePremiumScore(premiumScore2, premiumScore2);
+                            updateTrickScores(trickScore4, trickScore4);
+                            updatePremiumScore(premiumScore4, premiumScore4);
                             updateHorizontal(newHorizontal2);
                             break;
 
                     }
 
-
                 }
 
 
-                if(theirTeam.GameWon())
+
+/*                if(theirTeam.GameWon())
                 {
                     switch(theirTeam.getGamesWon())
                     {
@@ -99,7 +103,7 @@ public class MainActivity extends AppCompatActivity  {
                     }
                 }
 
-
+*/
 
             }
         });
