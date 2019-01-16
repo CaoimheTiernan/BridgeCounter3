@@ -58,14 +58,17 @@ public class MainActivity extends AppCompatActivity  {
                 }
 
 
-                if(theirTeam.GameWon() || ourTeam.GameWon()) {
-                    switch (gameNum) {
 
+               //todo cases where both teams win one game
+                if(theirTeam.GameWon() || ourTeam.GameWon()) {
+                    switch (ourTeam.getGamesWon()) {
+
+
+                        case 0 : updateTrickScores(trickScore2, trickScore1);
+                            updatePremiumScore(premiumScore2, premiumScore1);
                         case 1:
                             updateTrickScores(trickScore2, trickScore1);
                             updatePremiumScore(premiumScore2, premiumScore1);
-                            updateTrickScores(trickScore4, trickScore3);
-                            updatePremiumScore(premiumScore4, premiumScore3);
                             updateHorizontal(newHorizontal);
                             break;
 
@@ -73,8 +76,6 @@ public class MainActivity extends AppCompatActivity  {
                         case 2:
                             updateTrickScores(trickScore2, trickScore2);
                             updatePremiumScore(premiumScore2, premiumScore2);
-                            updateTrickScores(trickScore4, trickScore4);
-                            updatePremiumScore(premiumScore4, premiumScore4);
                             updateHorizontal(newHorizontal2);
                             break;
 
@@ -83,27 +84,6 @@ public class MainActivity extends AppCompatActivity  {
                 }
 
 
-
-/*                if(theirTeam.GameWon())
-                {
-                    switch(theirTeam.getGamesWon())
-                    {
-                        case 1 :
-                            updateTrickScores(trickScore4,trickScore3);
-                            updatePremiumScore(premiumScore4,premiumScore3);
-                            updateHorizontal(newHorizontal);
-                            break;
-
-                        case 2 :
-                            updateTrickScores(trickScore4,trickScore4);
-                            updatePremiumScore(premiumScore4,premiumScore4);
-                            updateHorizontal(newHorizontal2);
-                            break;
-
-                    }
-                }
-
-*/
 
             }
         });
