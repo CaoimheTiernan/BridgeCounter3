@@ -15,18 +15,31 @@ public class MainActivity extends AppCompatActivity  {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         final Scoreboard ourTeam = new Scoreboard();
         final Scoreboard theirTeam = new Scoreboard();
         final EditText premiumScore1 =  findViewById(R.id.dscore1);
         final EditText trickScore1 =  findViewById(R.id.uscore1);
+
         final View newHorizontal =  findViewById(R.id.hdivider2);
         final EditText trickScore2 = findViewById(R.id.uscore2);
         final EditText premiumScore2 = findViewById(R.id.dscore2);
         final View newHorizontal2 = findViewById(R.id.hdivider3);
+
         final EditText trickScore3 = findViewById(R.id.uscore3);
         final EditText trickScore4 = findViewById(R.id.uscore4);
         final EditText premiumScore3 = findViewById(R.id.dscore3);
         final EditText premiumScore4 = findViewById(R.id.dscore4);
+
+        final EditText trickScorea = findViewById(R.id.uscorea);
+        final EditText trickScoreb = findViewById(R.id.uscoreb);
+        final EditText trickScorec = findViewById(R.id.uscorec);
+        final EditText trickScored = findViewById(R.id.uscored);
+
+        final EditText premiumScorea = findViewById(R.id.dscorea);
+        final EditText premiumScoreb = findViewById(R.id.dscoreb);
+        final EditText premiumScorec = findViewById(R.id.dscorec);
+        final EditText premiumScored = findViewById(R.id.dscored);
 
         Button enterScore =  findViewById(R.id.button);
 
