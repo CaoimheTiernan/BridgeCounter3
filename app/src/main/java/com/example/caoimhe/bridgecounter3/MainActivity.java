@@ -70,6 +70,22 @@ public class MainActivity extends AppCompatActivity  {
                     theirTeam.setUpperScore(checkScore(trickScore4));
                 }
 
+                if(gameNum == 2)
+                {
+                    ourTeam.setUnderScore(checkScore(premiumScorea));
+                    ourTeam.setUpperScore(checkScore(trickScorea));
+                    theirTeam.setUnderScore(checkScore(premiumScorec));
+                    theirTeam.setUpperScore(checkScore(trickScorec));
+                }
+
+                if(gameNum == 3)
+                {
+                    ourTeam.setUnderScore(checkScore(premiumScoreb));
+                    ourTeam.setUpperScore(checkScore(trickScoreb));
+                    theirTeam.setUnderScore(checkScore(premiumScored));
+                    theirTeam.setUpperScore(checkScore(trickScored));
+                }
+
 
 
                //todo cases where both teams win one game
