@@ -32,14 +32,10 @@ public class MainActivity extends AppCompatActivity  {
         final EditText premiumScore4 = findViewById(R.id.dscore4);
 
         final EditText trickScorea = findViewById(R.id.uscorea);
-        final EditText trickScoreb = findViewById(R.id.uscoreb);
         final EditText trickScorec = findViewById(R.id.uscorec);
-        final EditText trickScored = findViewById(R.id.uscored);
-
         final EditText premiumScorea = findViewById(R.id.dscorea);
-        final EditText premiumScoreb = findViewById(R.id.dscoreb);
         final EditText premiumScorec = findViewById(R.id.dscorec);
-        final EditText premiumScored = findViewById(R.id.dscored);
+
 
         Button enterScore =  findViewById(R.id.button);
 
@@ -78,19 +74,11 @@ public class MainActivity extends AppCompatActivity  {
                     theirTeam.setUpperScore(checkScore(trickScorec));
                 }
 
-                if(gameNum == 3)
-                {
-                    ourTeam.setUnderScore(checkScore(premiumScoreb));
-                    ourTeam.setUpperScore(checkScore(trickScoreb));
-                    theirTeam.setUnderScore(checkScore(premiumScored));
-                    theirTeam.setUpperScore(checkScore(trickScored));
-                }
-
 
 
                //todo cases where both teams win one game
                 if(theirTeam.GameWon() || ourTeam.GameWon()) {
-                    switch (ourTeam.getGamesWon()) {
+                  /*  switch (ourTeam.getGamesWon()) {
 
 
                         case 0 : updateTrickScores(trickScore2, trickScore1);
@@ -108,7 +96,7 @@ public class MainActivity extends AppCompatActivity  {
                             updateHorizontal(newHorizontal2);
                             break;
 
-                    }
+                    } */
 
                 }
 

@@ -290,7 +290,7 @@
         android:layout_alignParentBottom="true"
         android:layout_marginStart="0dp"
         android:layout_marginLeft="0dp"
-        android:layout_marginBottom="47dp"
+        android:layout_marginBottom="84dp"
         android:background="@color/ruledLine" />
 
     <!-- 3rd trick score for our team -->
@@ -315,30 +315,10 @@
         tools:padding="10sp" />
 
 
-    <!-- 4th trick score for our team -->
-    <EditText
-        android:id="@+id/uscoreb"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/uscore2"
-        android:layout_alignStart="@+id/uscore1"
-        android:layout_alignLeft="@id/uscore1"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="35dp"
-        android:background="@android:color/transparent"
-        android:gravity="center_horizontal"
-        android:hint="@string/trickhint"
-        android:inputType="number"
-        android:singleLine="false"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        android:visibility="visible"
-        tools:padding="10sp" />
 
     <!-- 3rd trick score for their team -->
     <EditText
-        android:id="@+id/uscorec"
+        android:id="@+id/uscoreb"
         android:layout_width="120dp"
         android:layout_height="55dp"
         android:layout_below="@+id/uscore2"
@@ -359,25 +339,7 @@
 
     <!-- 4th trick score for their team -->
 
-    <EditText
-        android:id="@+id/uscored"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
-        android:layout_below="@+id/uscore2"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="34dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginRight="49dp"
-        android:background="@android:color/transparent"
-        android:gravity="center_horizontal"
-        android:hint="@string/trickhint"
-        android:inputType="number"
-        android:singleLine="false"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        android:visibility="visible"
-        tools:padding="10sp" />
+
 
     <!-- 3rd premiumScore box for we team -->
 
@@ -401,32 +363,12 @@
         android:textStyle="bold"
         android:visibility="visible" />
 
-    <!-- 4th premiumScore box for we team -->
-
-    <EditText
-        android:id="@+id/dscoreb"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/dscore1"
-        android:layout_alignLeft="@id/dscore1"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginBottom="44dp"
-        android:background="@android:color/transparent"
-        android:gravity="center_horizontal"
-        android:hint="@string/premiumhint"
-        android:inputType="number"
-        android:padding="10sp"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        android:visibility="visible" />
 
     <!-- 3rd premiumScore box for they team -->
 
 
     <EditText
-        android:id="@+id/dscorec"
+        android:id="@+id/dscoreb"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -444,27 +386,8 @@
         android:textStyle="bold"
         android:visibility="visible" />
 
-    <!--  4th premiumScore box for they team -->
 
 
-    <EditText
-        android:id="@+id/dscored"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="19dp"
-        android:layout_marginRight="19dp"
-        android:layout_marginBottom="45dp"
-        android:background="@android:color/transparent"
-        android:gravity="center_horizontal"
-        android:hint="@string/premiumhint"
-        android:inputType="number"
-        android:padding="10sp"
-        android:textSize="19dp"
-        android:textStyle="bold"
-        android:visibility="visible" />
 
 
 
