@@ -20,11 +20,8 @@ public class MainActivity extends AppCompatActivity  {
         final Scoreboard theirTeam = new Scoreboard();
         final EditText premiumScore1 =  findViewById(R.id.dscore1);
         final EditText trickScore1 =  findViewById(R.id.uscore1);
-
-        final View newHorizontal =  findViewById(R.id.hdivider2);
         final EditText trickScore2 = findViewById(R.id.uscore2);
         final EditText premiumScore2 = findViewById(R.id.dscore2);
-        final View newHorizontal2 = findViewById(R.id.hdivider3);
 
         final EditText trickScore3 = findViewById(R.id.uscore3);
         final EditText trickScore4 = findViewById(R.id.uscore4);
@@ -32,16 +29,15 @@ public class MainActivity extends AppCompatActivity  {
         final EditText premiumScore4 = findViewById(R.id.dscore4);
 
         final EditText trickScorea = findViewById(R.id.uscorea);
-        final EditText trickScorec = findViewById(R.id.uscorec);
+        final EditText trickScoreb = findViewById(R.id.uscoreb);
         final EditText premiumScorea = findViewById(R.id.dscorea);
-        final EditText premiumScorec = findViewById(R.id.dscorec);
+        final EditText premiumScoreb = findViewById(R.id.dscoreb);
 
-
+        final View newHorizontal =  findViewById(R.id.hdivider2);
+        final View newHorizontal2 = findViewById(R.id.hdivider3);
+        final View newHorizontal3 = findViewById(R.id.hdivider4);
         Button enterScore =  findViewById(R.id.button);
 
-
-        //Making sure line doesn't appear until a game is won
-        newHorizontal.setVisibility(View.GONE);
 
 
         //when the button is tapped update upperScore and UnderScore
@@ -56,6 +52,18 @@ public class MainActivity extends AppCompatActivity  {
                     theirTeam.setUnderScore(checkScore(premiumScore3));
                     theirTeam.setUpperScore(checkScore(trickScore3));
 
+
+                    //updates the activity on the correct boxes to display and freeze old ones
+                    // so they cannot be edited later
+                    if(theirTeam.GameWon() || ourTeam.GameWon())
+                    {
+                        updateTrickScores(trickScore2, trickScore1);
+                        updatePremiumScore(premiumScore2, premiumScore1);
+                        updateTrickScores(trickScore4, trickScore3);
+                        updatePremiumScore(premiumScore4, premiumScore3);
+                        updateHorizontal(newHorizontal);
+                    }
+
                 }
 
                 if(gameNum == 1)
@@ -64,42 +72,56 @@ public class MainActivity extends AppCompatActivity  {
                     ourTeam.setUpperScore(checkScore(trickScore2));
                     theirTeam.setUnderScore(checkScore(premiumScore4));
                     theirTeam.setUpperScore(checkScore(trickScore4));
+
+                    //updates the activity on the correct boxes to display and freeze old ones
+                    // so they cannot be edited later
+                    if(theirTeam.GameWon() || ourTeam.GameWon())
+                    {
+
+                       //if both teams have wona game must go to third game
+                        if ((ourTeam.getGamesWon() == 1) && (theirTeam.getGamesWon() == 1))
+                        {
+                            updatePremiumScore(premiumScorea,premiumScore2);
+                            updateTrickScores(trickScorea, trickScore2);
+                            updatePremiumScore(premiumScoreb,premiumScore4);
+                            updateTrickScores(trickScoreb,trickScore4);
+                            updateHorizontal(newHorizontal2);
+
+                        }
+
+                       //if one team has won two games they have won the rubber
+                        else
+                            {
+                                updatePremiumScore(premiumScore2,premiumScore2);
+                                updateTrickScores(trickScore2, trickScore2);
+                                updatePremiumScore(premiumScore4,premiumScore4);
+                                updateTrickScores(trickScore4,trickScore4);
+                                updateHorizontal(newHorizontal2);
+
+                            }
+
+                    }
                 }
 
                 if(gameNum == 2)
                 {
                     ourTeam.setUnderScore(checkScore(premiumScorea));
                     ourTeam.setUpperScore(checkScore(trickScorea));
-                    theirTeam.setUnderScore(checkScore(premiumScorec));
-                    theirTeam.setUpperScore(checkScore(trickScorec));
+                    theirTeam.setUnderScore(checkScore(premiumScoreb));
+                    theirTeam.setUpperScore(checkScore(trickScoreb));
+
+
+                    //updates activity
+                    if(theirTeam.GameWon() || ourTeam.GameWon())
+                    {
+                            updateTrickScores(trickScorea, trickScorea);
+                            updatePremiumScore(premiumScorea, premiumScorea);
+                            updateTrickScores(trickScoreb, trickScoreb);
+                            updatePremiumScore(premiumScoreb, premiumScoreb);
+                            updateHorizontal(newHorizontal3);
+
+                    }
                 }
-
-
-
-               //todo cases where both teams win one game
-                if(theirTeam.GameWon() || ourTeam.GameWon()) {
-                  /*  switch (ourTeam.getGamesWon()) {
-
-
-                        case 0 : updateTrickScores(trickScore2, trickScore1);
-                            updatePremiumScore(premiumScore2, premiumScore1);
-                        case 1:
-                            updateTrickScores(trickScore2, trickScore1);
-                            updatePremiumScore(premiumScore2, premiumScore1);
-                            updateHorizontal(newHorizontal);
-                            break;
-
-
-                        case 2:
-                            updateTrickScores(trickScore2, trickScore2);
-                            updatePremiumScore(premiumScore2, premiumScore2);
-                            updateHorizontal(newHorizontal2);
-                            break;
-
-                    } */
-
-                }
-
 
 
             }
