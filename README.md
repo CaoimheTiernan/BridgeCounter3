@@ -8,6 +8,6 @@ When a game has been won previous scores remain on the activity but are uneditab
 After a team has won two games then that team has won the rubber and no one can enter anymore scores.
 
 
-\nThings to be included in the future:
-\n A way of recording a new rubber without closing and restarting the app.
-\nA toast to say when a team has won a rubber.
+/nThings to be included in the future:
+/n A way of recording a new rubber without closing and restarting the app.
+/nA toast to say when a team has won a rubber.
